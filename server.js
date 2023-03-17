@@ -5,7 +5,7 @@ if (process.env.NODE_ENV !== "production") {
 const express = require("express")
 const bodyParser = require("body-parser")
 const app = express()
-const keys = require("../config/keys")
+const keys = require("./config/keys")
 
 const mongoose = require("mongoose");
 mongoose.set('strictQuery', false);
