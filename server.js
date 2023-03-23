@@ -24,7 +24,7 @@ const { BlogPost, Plan, ClientEmail } = require("./models");
 const emails = require("./email");
 
 // set up cors
-app.options('*', cors())
+app.use(cors())
 
 // test
 app.get("/", (req, res) => {
