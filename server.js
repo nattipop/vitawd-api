@@ -6,6 +6,7 @@ const express = require("express")
 const bodyParser = require("body-parser")
 const app = express()
 const keys = require("./config/keys")
+const cors = require("cors")
 
 const mongoose = require("mongoose");
 mongoose.set('strictQuery', false);
@@ -21,6 +22,9 @@ app.use(bodyParser.json());
 
 const { BlogPost, Plan, ClientEmail } = require("./models");
 const emails = require("./email");
+
+// set up cors
+app.options('*', cors())
 
 // test
 app.get("/", (req, res) => {
