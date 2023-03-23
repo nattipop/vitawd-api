@@ -7,6 +7,7 @@ const bodyParser = require("body-parser")
 const app = express()
 const keys = require("./config/keys")
 const cors = require("cors")
+const sitemap = require("./sitemap.xml")
 
 const mongoose = require("mongoose");
 mongoose.set('strictQuery', false);
@@ -147,6 +148,10 @@ app.post("/api/new-email", (req, res) => {
   } else {
     res.status(400).send("Incorrect data formatting")
   }
+})
+
+app.get("/sitemap.xml", (req, res) => {
+  res.sendFile(sitemap)
 })
 
 app.listen(process.env.PORT || 5000, () => console.log("Server running"))
