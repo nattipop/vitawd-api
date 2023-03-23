@@ -6,6 +6,9 @@ let transporter = nodemailer.createTransport({
   host: "smtp.gmail.com",
   secure: "true",
   auth: {
+    type: "0Auth2",
+    clientId: "663928070959-eljju6kfhc7tqtjjrjv763e346r0bfgm.apps.googleusercontent.com",
+    clientSecret: "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",
     user: keys.emailUsername,
     pass: keys.emailPassword
   }
