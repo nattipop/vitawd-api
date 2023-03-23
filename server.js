@@ -23,8 +23,8 @@ const { BlogPost, Plan, ClientEmail } = require("./models");
 const emails = require("./email");
 
 // test
-app.get("/api", (req, res) => {
-  res.json({"users": ["one", "two", "three", "four", "twelve"]})
+app.get("/", (req, res) => {
+  res.send(`Nothing here! Try "/api/routehere" for data`)
 })
 // fetch posts
 app.get("/api/posts", (req, res) => {
