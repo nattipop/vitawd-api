@@ -6,13 +6,8 @@ let transporter = nodemailer.createTransport({
   host: "smtp.gmail.com",
   port: 465,
   secure: "true",
-  auth: {
-    type: "0Auth2",
-    clientId: "663928070959-eljju6kfhc7tqtjjrjv763e346r0bfgm.apps.googleusercontent.com",
-    clientSecret: "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",
-    user: keys.emailUsername,
-    pass: keys.emailPassword
-  }
+  providerauth: {user: keys.emailUsername},
+  pass: keys.emailPassword
 });
 
 module.exports = {
