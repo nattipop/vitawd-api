@@ -1,5 +1,5 @@
 module.exports = {
   emailUsername: "nattipop815@gmail.com",
-  emailPassword: "aonsufqisimocjgj",
+  emailPassword: "jxvynjmjloejmqso",
   dbConnectionString: "mongodb://localhost/my-website"
 }
