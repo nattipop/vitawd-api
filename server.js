@@ -127,7 +127,7 @@ app.post("/api/new-post", (req, res) => {
 app.post("/api/new-email", (req, res) => {
   console.log(req.body)
   if(req.body) {
-    emails.sendEmail(req.body.fName, req.body.lName, req.body.clientEmail, req.body.business, req.body.service, req.body.haveWebsite, req.body.haveDomain);
+    // emails.sendEmail(req.body.fName, req.body.lName, req.body.clientEmail, req.body.business, req.body.service, req.body.haveWebsite, req.body.haveDomain);
 
     const client = new ClientEmail({
       first: req.body.fName,
