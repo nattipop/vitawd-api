@@ -5,7 +5,8 @@ let transporter = nodemailer.createTransport({
   service: "gmail",
   scope: "https://mail.google.com/",
   auth: {
-    clientId: "663928070959-eljju6kfhc7tqtjjrjv763e346r0bfgm.apps.googleusercontent.com",
+    type: "OAuth2",
+    serviceClient: "663928070959-eljju6kfhc7tqtjjrjv763e346r0bfgm.apps.googleusercontent.com",
     user: keys.emailUsername,
     pass: keys.emailPassword
   }
