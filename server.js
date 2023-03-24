@@ -125,12 +125,12 @@ app.post("/api/new-post", (req, res) => {
 
 // send an email
 app.post("/api/new-email", (req, res) => {
-  console.log(req.body)
+  console.log(req.body.fName)
   if(req.body) {
     // emails.sendEmail(req.body.fName, req.body.lName, req.body.clientEmail, req.body.business, req.body.service, req.body.haveWebsite, req.body.haveDomain);
 
     const client = new ClientEmail({
-      first: req.body.fName,
+      first: req.body.fName, 
       last: req.body.lName,
       email: req.body.clientEmail,
       business: req.body.business,
