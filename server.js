@@ -127,7 +127,13 @@ app.post("/api/new-post", (req, res) => {
 app.post("/api/new-email", (req, res) => {
   console.log(req.body.body.fName)
   if(req.body) {
-    emails.sendEmail(req.body.body.fName, req.body.body.lName, req.body.body.clientEmail, req.body.body.business, req.body.body.service, req.body.body.haveWebsite, req.body.body.haveDomain);
+    emails.sendEmail(req.body.body.fName, req.body.body.lName, req.body.body.clientEmail, req.body.body.business, req.body.body.service, req.body.body.haveWebsite, req.body.body.haveDomain).catch(err => {
+      if(err) {
+        res.status(500).send(err);
+      } else {
+        console.log("Email sent!")
+      }
+    });
 
     const client = new ClientEmail({
       first: req.body.body.fName, 

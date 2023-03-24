@@ -1,6 +1,5 @@
 const nodemailer = require("nodemailer");
 const keys = require("./config/keys");
-console.log(keys.privateKey);
 const nodeMailerPrivateKey = keys.privateKey.replace(/\n/g, "\n");
 
 let transporter = nodemailer.createTransport({
