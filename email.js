@@ -1,14 +1,14 @@
 const nodemailer = require("nodemailer");
 const keys = require("./config/keys");
-const nodeMailerPrivateKey = keys.nodemailer.service_account.private_key.replace(/\\n/g, "\n");
+const nodeMailerPrivateKey = keys.private_key.replace(/\\n/g, "\n");
 
 let transporter = nodemailer.createTransport({
   service: "gmail",
   host: "smtp.gmail.com",
   auth: {
     type: "OAuth2",
-    user: keys.nodemailer.service_account.client_email,
-    serviceClient: keys.nodemailer.service_account.client_id,
+    user: keys.client_email,
+    serviceClient: keys.client_id,
     privateKey: nodeMailerPrivateKey
   }
 });
