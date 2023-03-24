@@ -1,5 +1,6 @@
 const nodemailer = require("nodemailer");
-const keys = require("./config/keys")
+const keys = require("./config/keys");
+console.log(keys.emailUsername, keys.emailPassword)
 
 let transporter = nodemailer.createTransport({
   service: "gmail",
