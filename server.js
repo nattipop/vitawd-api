@@ -127,16 +127,16 @@ app.post("/api/new-post", (req, res) => {
 app.post("/api/new-email", (req, res) => {
   console.log(req.body.body.fName)
   if(req.body) {
-    // emails.sendEmail(req.body.fName, req.body.lName, req.body.clientEmail, req.body.business, req.body.service, req.body.haveWebsite, req.body.haveDomain);
+    emails.sendEmail(req.body.body.fName, req.body.body.lName, req.body.body.clientEmail, req.body.body.business, req.body.body.service, req.body.body.haveWebsite, req.body.body.haveDomain);
 
     const client = new ClientEmail({
-      first: req.body.fName, 
-      last: req.body.lName,
-      email: req.body.clientEmail,
-      business: req.body.business,
-      service: req.body.service,
-      website: req.body.haveWebsite,
-      domain: req.body.haveDomain
+      first: req.body.body.fName, 
+      last: req.body.body.lName,
+      email: req.body.body.clientEmail,
+      business: req.body.body.business,
+      service: req.body.body.service,
+      website: req.body.body.haveWebsite,
+      domain: req.body.body.haveDomain
     })
 
     client.save((err) => {
