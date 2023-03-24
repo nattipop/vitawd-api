@@ -6,7 +6,7 @@ const BlogPost = new Schema({
   time_stamp: String,
   author: String,
   description: String,
-  content: String,
+  content: HTMLElement,
   cover_image_src: String
 })
 
