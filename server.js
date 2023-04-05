@@ -143,7 +143,7 @@ app.post("/api/new-email", (req, res) => {
       service: req.body.body.service,
       website: req.body.body.haveWebsite,
       domain: req.body.body.haveDomain,
-      additionalInfo: req.body.additionalInfo
+      additionalInfo: req.body.body.additionalInfo
     })
 
     client.save((err) => {
