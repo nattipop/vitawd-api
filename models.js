@@ -25,7 +25,8 @@ const ClientEmail = new Schema({
   business: String,
   service: String,
   website: Boolean,
-  domain: Boolean
+  domain: Boolean,
+  additionalInfo: String
 })
 
 exports.BlogPost = mongoose.model("post", BlogPost);
