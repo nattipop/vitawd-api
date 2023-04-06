@@ -14,7 +14,7 @@ const oauth2Client = new OAuth2(
   OAUTH_PLAYGROUND
 );
 
-Mailing.sendEmail = async (fName, lName, clientEmail, business, service, haveWebsite, haveDomain, additionalInfo) => {
+Mailing.sendEmail = async (fName, lName, clientEmail, business, service, haveWebsite, haveDomain, additionalInfo, phone) => {
   oauth2Client.setCredentials({
     refresh_token: keys.refreshToken
   });
@@ -43,6 +43,7 @@ Mailing.sendEmail = async (fName, lName, clientEmail, business, service, haveWeb
         <ul>
           <li>Full Name: ${fName} ${lName}</li>
           <li>Email: ${clientEmail}</li>
+          <li>Phone Number: ${phone}
           <li>Business/Non-Profit Name: ${business}</li>
           <li>Service: ${service}</li>
           <li>Already have a website: ${haveWebsite}</li>

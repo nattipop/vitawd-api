@@ -127,7 +127,7 @@ app.post("/api/new-post", (req, res) => {
 app.post("/api/new-email", (req, res) => {
   console.log(req.body.body.fName)
   if(req.body) {
-    emails.Mailing.sendEmail(req.body.body.fName, req.body.body.lName, req.body.body.clientEmail, req.body.body.business, req.body.body.service, req.body.body.haveWebsite, req.body.body.haveDomain, req.body.body.additionalInfo).catch(err => {
+    emails.Mailing.sendEmail(req.body.body.fName, req.body.body.lName, req.body.body.clientEmail, req.body.body.business, req.body.body.service, req.body.body.haveWebsite, req.body.body.haveDomain, req.body.body.additionalInfo, req.body.body.phone).catch(err => {
       if(err) {
         res.status(500).send(err);
       } else {
@@ -143,7 +143,8 @@ app.post("/api/new-email", (req, res) => {
       service: req.body.body.service,
       website: req.body.body.haveWebsite,
       domain: req.body.body.haveDomain,
-      additionalInfo: req.body.body.additionalInfo
+      additionalInfo: req.body.body.additionalInfo,
+      phone: req.body.body.phone
     })
 
     client.save((err) => {
