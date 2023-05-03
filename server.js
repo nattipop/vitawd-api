@@ -32,7 +32,7 @@ app.get("/", (req, res) => {
 })
 // fetch posts
 app.get("/api/posts", (req, res) => {
-  BlogPost.find({}, (err, posts) => {
+  BlogPost.sort({ time_stamp: -1 }, (err, posts) => {
     if(err){
       res.status(500).send("there was an error with your request's format")
       throw err;
