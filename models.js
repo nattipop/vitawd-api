@@ -7,7 +7,8 @@ const BlogPost = new Schema({
   author: String,
   description: String,
   content: String,
-  cover_image_src: String
+  cover_image_src: String,
+  photo_credit: String
 })
 
 const Plan = new Schema({

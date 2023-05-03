@@ -110,6 +110,7 @@ app.post("/api/new-post", (req, res) => {
       description: req.body.description,
       content: req.body.content,
       cover_image_src: req.body.cover_img_src,
+      photo_credit: req.body.photo_credit,
       time_stamp: `${date} @${time}`
     })
 
