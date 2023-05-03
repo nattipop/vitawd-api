@@ -32,7 +32,7 @@ app.get("/", (req, res) => {
 })
 // fetch posts
 app.get("/api/posts", (req, res) => {
-  BlogPost.find({ $sort: { time_stamp: -1 } }, (err, posts) => {
+  BlogPost.find({}, (err, posts) => {
     if(err){
       res.status(500).send("there was an error with your request's format")
       throw err;
@@ -43,7 +43,7 @@ app.get("/api/posts", (req, res) => {
     }
 
     res.status(200).send(posts)
-  })
+  }).sort({time_stamp: -1})
 })
 // fetch post by id
 app.get("/api/post/:_id", (req, res) => {
