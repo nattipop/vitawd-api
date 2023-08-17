@@ -20,8 +20,7 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 
-const { BlogPost, Plan, ClientEmail } = require("./models");
-const emails = require("./email");
+const { BlogPost, Plan } = require("./models");
 
 // set up cors
 app.use(cors())
@@ -123,39 +122,5 @@ app.post("/api/new-post", (req, res) => {
     res.status(400).send("Incorrect data formatting")
   }
 });
-
-// send an email
-app.post("/api/new-email", (req, res) => {
-  console.log(req.body.body.fName)
-  if(req.body) {
-    emails.Mailing.sendEmail(req.body.body.fName, req.body.body.lName, req.body.body.clientEmail, req.body.body.business, req.body.body.service, req.body.body.haveWebsite, req.body.body.haveDomain, req.body.body.additionalInfo, req.body.body.clientPhone).catch(err => {
-      if(err) {
-        res.status(500).send(err);
-      } else {
-        console.log("Email sent!")
-      }
-    });
-
-    const client = new ClientEmail({
-      first: req.body.body.fName, 
-      last: req.body.body.lName,
-      email: req.body.body.clientEmail,
-      business: req.body.body.business,
-      service: req.body.body.service,
-      website: req.body.body.haveWebsite,
-      domain: req.body.body.haveDomain,
-      additionalInfo: req.body.body.additionalInfo,
-      phone: req.body.body.clientPhone
-    })
-
-    client.save((err) => {
-      if(err) { return next(err) }
-
-      res.status(200).send("Successfully added to database")
-    })
-  } else {
-    res.status(400).send("Incorrect data formatting")
-  }
-})
 
 app.listen(process.env.PORT || 5000, () => console.log("Server running"))

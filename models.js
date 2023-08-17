@@ -19,18 +19,5 @@ const Plan = new Schema({
   icon_url: String
 })
 
-const ClientEmail = new Schema({
-  first: String, 
-  last: String,
-  email: String,
-  business: String,
-  service: String,
-  website: Boolean,
-  domain: Boolean,
-  additionalInfo: String,
-  phone: String
-})
-
 exports.BlogPost = mongoose.model("post", BlogPost);
 exports.Plan = mongoose.model("plan", Plan);
-exports.ClientEmail = mongoose.model("email", ClientEmail);
